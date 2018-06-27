@@ -1,5 +1,6 @@
 var request = require("request");
 const express = require('express')
+var fs = require('fs')
 const data = require("./model/profile.json")
 const app = express()
 const port = process.env.PORT || 3000
@@ -31,23 +32,35 @@ app.get('/', function (req, res) {
     res.send("Hello")
 })
 
-app.put('/api/newprofile', function (req, res) {
-    console.log("Iniciado /api/newuser");
+app.put('/api/profile', function (req, res) {
+    console.log("Iniciado /api/profile");
     console.log("Criação de um novo usuario");
+        
     let newuser = {
-        "uuid": req.uuid,
-        "gender": req.gender,
-        "title": req.title,
-        "first": req.first,
-        "last": req.last,
-        "email": req.emailuuid,
-        "phone": req.phone,
-        "cep": req.cep,
-        "thumbnail": req.thumbnail
+        "uuid": req.headers.uuid,
+        "gender": req.headers.gender,
+        "title": req.headers.title,
+        "first": req.headers.first,
+        "last": req.headers.last,
+        "email": req.headers.emailuuid,
+        "phone": req.headers.phone,
+        "cep": req.headers.cep,
+        "thumbnail": req.headers.thumbnail
     };
-    console.log("novo usuario: " + newuser);
+    
+    //data.push(newuser)
 
+    fs.readFile('./model/profile.json', function (err, data) {
+        var json = JSON.parse(data)
+        json.push('./model/profile.json: ' + newuser)
+    
+        fs.writeFile("./model/profile.json", JSON.stringify(json))
+    })
+
+    res.status(200).send("sucesso");
 })
+
+
 
 app.listen(port, function () {
     console.log("Rodando na porta:", port)
