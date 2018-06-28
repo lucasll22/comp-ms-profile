@@ -109,17 +109,8 @@
     "cep": 67419,
     "thumbnail": "https://randomuser.me/api/portraits/thumb/men/58.jpg"
   },
-  {
-    "uuid": "11",
-    "gender": "male",
-    "title": "titulo...",
-    "first": "Lucas",
-    "last": "Lusa",
-    "email": "lucas@qualquercoisa",
-    "phone": "559999",
-    "cep": "99970000",
-    "thumbnail": "thumb"
-  },
+  "./model/profile.json: [object Object]",
+  "./model/profile.json: [object Object]",
   {
     "uuid": "11",
     "gender": "male",
