@@ -10,50 +10,8 @@
     "cep": 79475,
     "thumbnail": "https://randomuser.me/api/portraits/thumb/men/12.jpg"
   },
-  {
-    "uuid": 2,
-    "gender": "male",
-    "title": "mr",
-    "first": "nelmo",
-    "last": "fernandes",
-    "email": "nelmo.fernandes@example.com",
-    "phone": "(08) 0700-8861",
-    "cep": 17405,
-    "thumbnail": "https://randomuser.me/api/portraits/thumb/men/85.jpg"
-  },
-  {
-    "uuid": 3,
-    "gender": "male",
-    "title": "mr",
-    "first": "eberardo",
-    "last": "da costa",
-    "email": "eberardo.dacosta@example.com",
-    "phone": "(05) 0027-4635",
-    "cep": 68349,
-    "thumbnail": "https://randomuser.me/api/portraits/thumb/men/58.jpg"
-  },
-  {
-    "uuid": 4,
-    "gender": "male",
-    "title": "mr",
-    "first": "rogélio",
-    "last": "almeida",
-    "email": "rogélio.almeida@example.com",
-    "phone": "(08) 5644-5258",
-    "cep": 18195,
-    "thumbnail": "https://randomuser.me/api/portraits/thumb/men/79.jpg"
-  },
-  {
-    "uuid": 5,
-    "gender": "female",
-    "title": "miss",
-    "first": "isolina",
-    "last": "pires",
-    "email": "isolina.pires@example.com",
-    "phone": "(47) 4632-3913",
-    "cep": 46598,
-    "thumbnail": "https://randomuser.me/api/portraits/thumb/women/18.jpg"
-  },
+  null,
+  null,
   {
     "uuid": 6,
     "gender": "female",
@@ -77,15 +35,15 @@
     "thumbnail": "https://randomuser.me/api/portraits/thumb/women/12.jpg"
   },
   {
-    "uuid": 8,
-    "gender": "male",
-    "title": "mr",
-    "first": "lorival",
-    "last": "de souza",
-    "email": "lorival.desouza@example.com",
-    "phone": "(71) 8124-0571",
-    "cep": 45806,
-    "thumbnail": "https://randomuser.me/api/portraits/thumb/men/71.jpg"
+    "uuid": "8",
+    "gender": "indeciso",
+    "title": "titulo...",
+    "first": "Ricardo",
+    "last": "Heinz",
+    "email": "ricardo@qualquercoisa",
+    "phone": "798798798",
+    "cep": "99970000",
+    "thumbnail": "thumb"
   },
   {
     "uuid": 9,
