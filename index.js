@@ -69,12 +69,23 @@ app.put('/api/profile', verifyToken, function (req, res) {
 })
 
 app.get('/api/profile/:userId', function (req, res) {
-    console.log("Consulta usuário");
     let idUser = req.params.userId
-
-    res.send("id do usuário: "+idUser)
-
-    
+    let encontrou = false;
+    var arrFound = data.filter(function(item) {
+        if(item.uuid == idUser)
+        {
+            let usr = {item}
+            res.status(200).json(usr)
+            encontrou = true;
+            return
+        }
+      });
+      if(encontrou == false)
+      {
+        res.status(401).send("ID de usuário não encontrado")       
+      }
+}
+)
 
 app.delete('/api/profile', function (req, res) {
     const data = require("./model/profile.json")
