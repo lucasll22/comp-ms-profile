@@ -68,6 +68,14 @@ app.put('/api/profile', verifyToken, function (req, res) {
     }
 })
 
+app.get('/api/profile/:userId', function (req, res) {
+    console.log("Consulta usuário");
+    let idUser = req.params.userId
+
+    res.send("id do usuário: "+idUser)
+
+    
+
 app.delete('/api/profile', function (req, res) {
     const data = require("./model/profile.json")
     
