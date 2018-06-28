@@ -5,6 +5,8 @@ const data = require("./model/profile.json")
 const app = express()
 const port = process.env.PORT || 3000
 
+console.log(data);
+
 function verifyToken(req, res, next) {
     let auth = req.headers.authorization
     if (auth) {
@@ -32,32 +34,38 @@ app.get('/', function (req, res) {
     res.send("Hello")
 })
 
-app.put('/api/profile', function (req, res) {
-    console.log("Iniciado /api/profile");
-    console.log("Criação de um novo usuario");
+app.put('/api/profile', verifyToken, function (req, res) {
+    let auth = req.headers.authorization
+    if (auth) {
+        const data = require("./model/profile.json")
         
-    let newuser = {
-        "uuid": req.headers.uuid,
-        "gender": req.headers.gender,
-        "title": req.headers.title,
-        "first": req.headers.first,
-        "last": req.headers.last,
-        "email": req.headers.emailuuid,
-        "phone": req.headers.phone,
-        "cep": req.headers.cep,
-        "thumbnail": req.headers.thumbnail
-    };
-    
-    //data.push(newuser)
-
-    fs.readFile('./model/profile.json', function (err, data) {
-        var json = JSON.parse(data)
-        json.push('./model/profile.json: ' + newuser)
-    
-        fs.writeFile("./model/profile.json", JSON.stringify(json))
-    })
-
-    res.status(200).send("sucesso");
+        console.log("Iniciado /api/profile");
+        console.log("Criação de um novo usuario");
+            
+        let newuser = {
+            "uuid": req.headers.uuid,
+            "gender": req.headers.gender,
+            "title": req.headers.title,
+            "first": req.headers.first,
+            "last": req.headers.last,
+            "email": req.headers.emailuuid,
+            "phone": req.headers.phone,
+            "cep": req.headers.cep,
+            "thumbnail": req.headers.thumbnail
+        };
+        data.push(newuser)   
+        fs.writeFile("./model/profile.json", JSON.stringify(data, false, 2), function(err) {
+            if(err) {
+                return console.log(err);
+            }
+            console.log("The file was saved!");
+        }); 
+        res.status(200).send("sucesso");
+    }
+    else
+    {
+        res.status(401).send("Acesso negado");
+    }
 })
 
 
