@@ -68,7 +68,20 @@ app.put('/api/profile', verifyToken, function (req, res) {
     }
 })
 
+app.delete('/api/profile', function (req, res) {
+    const data = require("./model/profile.json")
+    
+    console.log("Iniciado /api/profile");
+    console.log("remoção de usuario");
+        
+    let user = req.headers.uuid
 
+    console.log("recebido usuario: " + user)
+    
+    
+}
+)
+    
 
 app.listen(port, function () {
     console.log("Rodando na porta:", port)
