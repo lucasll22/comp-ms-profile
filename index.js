@@ -77,32 +77,12 @@ app.get('/api/profile/:userId', function (req, res) {
             if(item.uuid == idUser)
             {
                 let usr = {item}
-
-                /**
-                let endereco = 
-                {
-                    "cep": 67419,
-                    "rua": "rua piauí",
-                    "cidade": "macapá",
-                    "estado": "rio de janeiro"
-                }
-                */
-
-                let options = {
-                    method: 'GET',
-                    url: 'http://comp-ms-address.herokuapp.com:80/api/address',
-                    headers:
-                        { Authorization: 'Bearer ' + auth }
-                }
                 res.status(200).json(usr)
                 encontrou = true;
                 return
             }
         }
       });
-
-
-
       if(encontrou == false)
       {
         res.status(401).send("ID de usuário não encontrado")       
