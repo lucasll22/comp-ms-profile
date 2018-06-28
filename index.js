@@ -92,9 +92,23 @@ app.delete('/api/profile', function (req, res) {
     
     console.log("Iniciado /api/profile");
     console.log("remoção de usuario");
-        
-    let user = req.headers.uuid
+    
 
+    let user = req.headers.uuid
+    let temp = 0
+    var arrFound = data.filter(function(item) {
+        if(item.uuid == user)
+        {
+            let usr = {item}
+            console.log(item)
+            delete data[temp]
+            return
+        }
+        temp = temp + 1
+        
+      });
+      res.status(200).send(data)       
+      
     console.log("recebido usuario: " + user)
     
     
